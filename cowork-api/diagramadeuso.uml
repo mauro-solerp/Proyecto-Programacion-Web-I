@@ -1,0 +1,21 @@
+@startuml
+actor User as "Usuario"
+actor Admin as "Administrador"
+
+usecase "Registrar Usuario" as UC_Register
+usecase "Iniciar Sesión" as UC_Login
+usecase "Consultar Horarios Disponibles" as UC_CheckSlots
+usecase "Reservar" as UC_Book
+usecase "Consultar Reservas" as UC_ViewReservations
+usecase "Cancelar Reserva" as UC_CancelReservation
+
+User --> UC_Register
+User --> UC_Login
+User --> UC_CheckSlots
+User --> UC_Book
+User --> UC_ViewReservations
+User --> UC_CancelReservation
+
+Admin --> UC_Login
+Admin --> UC_ViewReservations
+@enduml

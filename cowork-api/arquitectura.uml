@@ -1,0 +1,23 @@
+@startuml
+package "Frontend" {
+  [React Application]
+}
+
+package "Backend" {
+  node "API Server" {
+    [ReservationController]
+    [UserController]
+  }
+  
+  database "Database" {
+    [User]
+    [Reservation]
+  }
+}
+
+[React Application] --> [API Server] : API Requests
+[ReservationController] --> [Database] : Consults Reservations
+[UserController] --> [Database] : User Authentication
+
+[ReservationController] --> [UserController] : Validate User
+@enduml
